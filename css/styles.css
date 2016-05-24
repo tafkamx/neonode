@@ -1,6 +1,7 @@
 h1 {
   font-size: 24px;
   color : #7ec5ed;
+  font-family: AndaleMono
 }
 
 h1 > a {
