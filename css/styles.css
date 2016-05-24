@@ -82,8 +82,13 @@ div.menu > div.menu > .item {
   font-family: AndaleMono;
   color : #999;
   padding: 2px 0;
-  margin: 0;
+  margin: 0 60px 0 0;
   text-decoration: underline;
+}
+
+div.menu > div.menu > .item:hover {
+  background : #fcf36f;
+  color : #000;
 }
 
 div.content {
