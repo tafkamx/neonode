@@ -3,181 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
     <!--[if lt IE 9]>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" />
     <![endif]-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <style media="screen">
-      h1 {
-        font-size: 24px;
-        color : #7ec5ed;
-      }
-
-      h1 > a {
-        color : #7ec5ed;
-        letter-spacing: 2px
-      }
-
-      a {
-        color : #f38191;
-      }
-
-      hr {
-        height:1px;
-        background: #fcf36f;
-        border :none;
-      }
-
-      table {
-        margin: 0 0 20px 0;
-        border: 1px solid grey;
-
-      }
-
-      table th {
-        padding: 6px 13px;
-        border-bottom: 1px solid grey;
-      }
-
-      table tr:nth-child(even) {
-        background:#F1F1F1;
-      }
-
-      h2 > a {
-        font-size: 24px;
-        color : #7ec5ed;
-      }
-
-      h3 > a {
-        /*font-size: 20px;*/
-        color : #7ec5ed;
-      }
-
-      div.sidebar {
-        padding : 0 0 0 10px;
-        box-shadow: 0 0 20px rgba(34, 36, 38, .15);
-        width: 260px;
-        height: 100%;
-        right: auto;
-        left: 0;
-        display: block;
-        background : #FFF;
-        position: fixed;
-        top : 0;
-        max-height: 100%;
-        overflow-y:scroll;
-      }
-
-      div.menu {
-        display : block;
-      }
-
-      div.menu > .item {
-        display: block;
-        font-size: 14px;
-        color : #f38191;
-        height : 24px;
-        margin : 20px 0 10px 0;
-        text-decoration: none;
-      }
-
-      div.menu > div.menu {
-        margin : 10px 0 10px 20px;
-      }
-
-      div.menu > div.menu > .item {
-        display: block;
-        font-size: 12px;
-        font-family: AndaleMono;
-        color : #999;
-        padding: 2px 0;
-        margin: 0;
-        text-decoration: underline;
-      }
-
-      div.content {
-        margin-left : 260px;
-        max-width: 790px;
-        font-family : AndaleMono;
-        font-size : 15px;
-        line-height: 1.8;
-        color : #333;
-      }
-
-      div.content > div.container {
-        padding : 20px;
-      }
-
-      div.content h1, div.content h2, div.content h3 {
-        line-height: 3.0;
-        margin-top: 40px;
-      }
-      .center {
-        width : 510px;
-        margin:0 auto 80px auto;
-      }
-
-      .version {
-        font-size :16px;
-        color : #f38191;
-        text-align : center;
-      }
-
-      .description {
-        font-family: AndaleMono;
-        font-size :15px;
-        line-height: 1.8;
-        color : #333;
-        text-align: center;
-      }
-
-      .logo {
-        width : 510px;
-        height : 125px;
-        object-fit: contain;
-      }
-
-      .empathia-logo {
-        width : 95px;
-        height: 23px;
-        object-fit: contain;
-        vertical-align: text-bottom;
-      }
-
-
-      .github a {
-        color : #999;
-        font-size: 12px;
-        text-decoration: underline;
-      }
-
-      .github img {
-        width : 16px;
-        height: 16px;
-        vertical-align: text-bottom;
-        margin-right: 4px;
-      }
-
-      p.footer {
-        text-align: center;
-      }
-
-      code {
-        background: #F1F1F1;
-        padding : 0px 5px;
-        color : #000;
-      }
-
-      pre {
-        background : #F1F1F1;
-        padding:10px;
-        margin :20px;
-        display: block;
-        line-height: normal;
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
   </head>
   <body>
     <a class="github-fork-ribbon" href="https://github.com/Empathia/neonode" title="Fork me on GitHub">Fork me on GitHub</a>
@@ -229,14 +61,14 @@
           <a class="item" href="#code-of-conduct">Code of conduct</a>
         </div>
 
-        <p class="github"><a href="https://github.com/Empathia/neonode"><img src="/images/github.svg" />Go to github</a></p>
+        <p class="github"><a href="https://github.com/Empathia/neonode"><img src="images/github.svg" />Go to github</a></p>
       </div>
 
   </div>
   <div class="content">
     <div class="container">
       <div class="center">
-        <img class="logo" src="/images/logo.svg" alt="neonode logo" />
+        <img class="logo" src="images/logo.svg" alt="neonode logo" />
         <p class="version">v0.0.2</p>
         <p class="description">A Yeoman generator to scaffold an opinionated minimalistic MVC framework</p>
       </div>
@@ -674,7 +506,7 @@ $ NODE_ENV=production knex migrate:latest
 
       <hr />
 
-      <p class="footer">Made with coffee &amp; &lt;3 at: <img class="empathia-logo" src="/images/logo-empathia.svg" alt="empathia" /></p>
+      <p class="footer">Made with coffee &amp; &lt;3 at: <img class="empathia-logo" src="images/logo-empathia.svg" alt="empathia" /></p>
 
     </div>
   </div>
