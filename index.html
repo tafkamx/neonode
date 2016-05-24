@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.min.css" />
+    <!--[if lt IE 9]>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.0/gh-fork-ribbon.ie.min.css" />
+    <![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <style media="screen">
+      h1 {
+        font-size: 24px;
+        color : #7ec5ed;
+      }
+
+      h1 > a {
+        color : #7ec5ed;
+        letter-spacing: 2px
+      }
+
+      a {
+        color : #f38191;
+      }
+
+      hr {
+        height:1px;
+        background: #fcf36f;
+        border :none;
+      }
+
+      table {
+        margin: 0 0 20px 0;
+        border: 1px solid grey;
+
+      }
+
+      table th {
+        padding: 6px 13px;
+        border-bottom: 1px solid grey;
+      }
+
+      table tr:nth-child(even) {
+        background:#F1F1F1;
+      }
+
+      h2 > a {
+        font-size: 24px;
+        color : #7ec5ed;
+      }
+
+      h3 > a {
+        /*font-size: 20px;*/
+        color : #7ec5ed;
+      }
+
+      div.sidebar {
+        padding : 0 0 0 10px;
+        box-shadow: 0 0 20px rgba(34, 36, 38, .15);
+        width: 260px;
+        height: 100%;
+        right: auto;
+        left: 0;
+        display: block;
+        background : #FFF;
+        position: fixed;
+        top : 0;
+        max-height: 100%;
+        overflow-y:scroll;
+      }
+
+      div.menu {
+        display : block;
+      }
+
+      div.menu > .item {
+        display: block;
+        font-size: 14px;
+        color : #f38191;
+        height : 24px;
+        margin : 20px 0 10px 0;
+        text-decoration: none;
+      }
+
+      div.menu > div.menu {
+        margin : 10px 0 10px 20px;
+      }
+
+      div.menu > div.menu > .item {
+        display: block;
+        font-size: 12px;
+        font-family: AndaleMono;
+        color : #999;
+        padding: 2px 0;
+        margin: 0;
+        text-decoration: underline;
+      }
+
+      div.content {
+        margin-left : 260px;
+        max-width: 790px;
+        font-family : AndaleMono;
+        font-size : 15px;
+        line-height: 1.8;
+        color : #333;
+      }
+
+      div.content > div.container {
+        padding : 20px;
+      }
+
+      div.content h1, div.content h2, div.content h3 {
+        line-height: 3.0;
+        margin-top: 40px;
+      }
+      .center {
+        width : 510px;
+        margin:0 auto 80px auto;
+      }
+
+      .version {
+        font-size :16px;
+        color : #f38191;
+        text-align : center;
+      }
+
+      .description {
+        font-family: AndaleMono;
+        font-size :15px;
+        line-height: 1.8;
+        color : #333;
+        text-align: center;
+      }
+
+      .logo {
+        width : 510px;
+        height : 125px;
+        object-fit: contain;
+      }
+
+      .empathia-logo {
+        width : 95px;
+        height: 23px;
+        object-fit: contain;
+        vertical-align: text-bottom;
+      }
+
+
+      .github a {
+        color : #999;
+        font-size: 12px;
+        text-decoration: underline;
+      }
+
+      .github img {
+        width : 16px;
+        height: 16px;
+        vertical-align: text-bottom;
+        margin-right: 4px;
+      }
+
+      p.footer {
+        text-align: center;
+      }
+
+      code {
+        background: #F1F1F1;
+        padding : 0px 5px;
+        color : #000;
+      }
+
+      pre {
+        background : #F1F1F1;
+        padding:10px;
+        margin :20px;
+        display: block;
+        line-height: normal;
+      }
+    </style>
+  </head>
+  <body>
+    <a class="github-fork-ribbon" href="https://github.com/Empathia/neonode" title="Fork me on GitHub">Fork me on GitHub</a>
+    <div class="sidebar">
+
+      <h1><a href="https://empathia.github.io/neonode">// NEONODE</a></h1>
+
+      <div class="menu">
+        <a class="item">::Getting Started</a>
+        <div class="menu vertical">
+          <a class="item" href="#Installation">Installation</a>
+          <a class="item" href="#Structure">Project Structure</a>
+          <a class="item" href="#Dependencies">Main Dependencies</a>
+        </div>
+
+        <a class="item" href="#Routing">::Routing</a>
+
+        <a class="item" href="#Middlewares">::Middlewares</a>
+
+        <a class="item" href="#Controllers">::Controllers</a>
+        <div class="menu vertical">
+          <a class="item" href="#BeforeActions">Before Actions</a>
+          <a class="item" href="#Actions">Methods / Actions</a>
+          <a class="item" href="#Params">Parameters</a>
+          <a class="item" href="#Sessions">Sessions</a>
+          <a class="item" href="#Flash">The Flash</a>
+          <a class="item" href="#Flow">Request Flow</a>
+        </div>
+
+        <a class="item" href="#ModelsAndMigrations">::Models & Migrations</a>
+        <div class="menu vertical">
+          <a class="item" href="#Migrations">Migrations</a>
+          <a class="item" href="#Models">Models</a>
+        </div>
+
+        <a class="item" href="#Views">::Views</a>
+        <div class="menu vertical">
+          <a class="item" href="#Templates">Templates</a>
+          <a class="item" href="#Layouts">Layouts</a>
+          <a class="item" href="#Partials">Partials</a>
+        </div>
+
+        <a class="item" href="#Contributing">::Contributing</a>
+        <div class="menu vertical">
+          <a class="item" href="#contrib-guidelines">Contribution guidelines</a>
+          <a class="item" href="#bug-report">Bug report</a>
+          <a class="item" href="#feature-request">Feature request</a>
+          <a class="item" href="#pull-request">Pull request</a>
+          <a class="item" href="#code-of-conduct">Code of conduct</a>
+        </div>
+
+        <p class="github"><a href="https://github.com/Empathia/neonode"><img src="/images/github.svg" />Go to github</a></p>
+      </div>
+
+  </div>
+  <div class="content">
+    <div class="container">
+      <div class="center">
+        <img class="logo" src="/images/logo.svg" alt="neonode logo" />
+        <p class="version">v0.0.2</p>
+        <p class="description">A Yeoman generator to scaffold an opinionated minimalistic MVC framework</p>
+      </div>
+
+      <h2><a name="Installation" class="title">Installation</a></h2>
+
+      <p>First you need to install yeoman and neonode's generator:</p>
+      <pre>$ npm install -g yeoman genearator-neonode</pre>
+
+      <p>Now run neonode's generator:</p>
+      <pre>$ yo neonode</pre>
+
+      <p>Just follow the instructions. <br />
+      In this example we will use the name <code>neonode-app</code> for our project.</p>
+
+      <p><img src="https://camo.githubusercontent.com/559bf48c222a3a63cf6ede05b1ce17dc8e3e014f/68747470733a2f2f6d6f6e6f736e61702e636f6d2f66696c652f78336d446c6a63414e566849366d4670796d48714a376a705975485a32742e706e67" alt="yo-neonode" /></p>
+
+      <p>If you don't set a project name it will create the project in the current directory.</p>
+
+      <p><code>neonode</code> uses webpack to compile its assets, to do it run:</p>
+
+      <pre>$ webpack -d</pre>
+
+      <p><img src="https://camo.githubusercontent.com/96c61e97751d2acaee412e196087bd5dd6cff8a3/68747470733a2f2f6d6f6e6f736e61702e636f6d2f66696c652f517a776b32456449476c3966627142437a48334e514e68327344594257732e706e67" alt="webpack-d" /></p>
+
+      <p>And finally to start the server run:</p>
+      <pre>$ npm start</pre>
+      <p><img src="https://camo.githubusercontent.com/ea1c8b0f7329869f9a75d8b9a1c77e6e92884b65/68747470733a2f2f6d6f6e6f736e61702e636f6d2f66696c652f7637394e5a74333347747145556a426d764c4e47584d38513449345864552e706e67" alt="npm-start" /></p>
+
+      <p>Now point your browser to http://localhost:3000 you should see something like this:</p>
+      <p><img src="https://camo.githubusercontent.com/90be94aa5b7a6260a0288fd2c1e05d45d6757b5f/68747470733a2f2f6d6f6e6f736e61702e636f6d2f66696c652f6d6e7963514b763064475148614c6349355a717230595a487830486850522e706e67" alt="it-works" /></p>
+
+      <hr />
+
+      <h2><a name="Structure" class="title">Project Structure</a></h2>
+
+      <ul>
+        <li><code>bin</code> executable files</li>
+        <li><code>config</code></li>
+        <ul>
+          <li><code>config.js</code> general app configuration</li>
+          <li><code>middlewares.js</code> This file specifies the middlewares and the order they will be loaded</li>
+          <li>RouteMappings.js Here you will set the routes.</li>
+        </ul>
+        <li><code>controllers</code> <a href="azendal.github.io/neon/" title="Neon.js">Neon.js</a> classes to handle the web requests</li>
+        <li><code>lib</code> You'll put custom libraries here</li>
+        <ul>
+          <li><code>boot.js</code> Here you can add code or modules that needs to run after the controllers and models are loaded</li>
+        </ul>
+        <li><code>log</code> Application logs go here, you will find different logs depending of the value of your NODE_ENV variable, the default is <code>development.log</code></li>
+        <li><code>middlewares</code> <a href="http://expressjs.com">Express</a> middlewares go here.</li>
+        <li><code>migrations</code> <a href="http://knexjs.org">Knex</a> generated migrations will be here.</li>
+        <li><code>models</code> This holds the <a href="https://github.com/sgarza/krypton/">Krypton-ORM</a> classes that model and wrap the data stored in the application's database</li>
+        <li><code>public</code> Like the public directory for a web server, this directory has web files that don't change, such as JavaScript files (public/js), graphics (public/img), stylesheets (public/css), and HTML files (public).</li>
+        <li><code>views</code> This holds the display Thulium templates to fill in with data from our application, convert to HTML, and return to the user's browser.</li>
+        <ul>
+            <li><code>layouts</code> Holds the template files for layouts to be used with views. This models the common header/footer method of wrapping views.</li>
+        </ul>
+      </ul>
+
+      <hr />
+
+      <h2><a name="Dependencies" class="title">Main Dependencies</a></h2>
+
+      <ul>
+        <li><a href="http://expressjs.com">Express</a></li>
+        <li><a href="http://knexjs.org/">Knex</a></li>
+        <li><a href="https://github.com/sgarza/krypton/">Krypton ORM</a></li>
+        <li><a href="http://azendal.github.io/neon/">Neon.js</a></li>
+        <li><a href="https://github.com/pateketrueke/route-mappings">Route Mappings</a></li>
+        <li><a href="https://github.com/freshout-dev/thulium/">Thulium</a></li>
+        <li><a href="https://github.com/sgarza/thulium-express">thulium-express</a></li>
+        <li><a href="https://github.com/sgarza/thulium-express">thulium-express</a></li>
+        <li><a href="https://webpack.github.io/">Webpack</a></li>
+      </ul>
+
+      <hr />
+
+      <h2><a name="Routing" class="title">Routing</a></h2>
+
+      <p>Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).</p>
+
+      <p>The Router recognizes URLs and dispatches them to a controller's action. The RouteMappings can also generate paths and URLs, avoiding the need to hardcode strings in your views.</p>
+
+      <p>With <a href="https://github.com/pateketrueke/route-mappings">Route Mappings</a> you can generate Rails Style Routing and RESTFul mappings to use them as express routes.</p>
+
+      <p>The following code is an example of a very basic route:</p>
+
+      <p><code>config/RouteMappings.js</code></p>
+
+      <script src="https://gist.github.com/sgarza/fd1780eb61d9ef41b49369f6dc327b7e.js"></script>
+
+      <p>When a neonode application receives an incoming request for:</p>
+
+      <p><code>GET /login</code></p>
+
+      <p>It asks the route mapper to match it to a controller action. If the first matching route is:</p>
+      <pre>RouteMappings.get('/login', { to: 'Sessions#new', as: 'login' })</pre>
+
+      <p>The request is dispatched to the <code>SessionsController</code> 'new' action.</p>
+
+      <p>You can also use <strong>Resource Routing</strong></p>
+
+      <p>A resourceful route provides a mapping between HTTP verbs and URLs to controller actions. By convention, each action also maps to particular CRUD operations in a database. A single entry in the routing file, such as:</p>
+
+      <pre>RouteMappings.resources(['/Users']);</pre>
+
+      <p>The above creates seven different routes in your application, all mapping to the UsersController:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>HTTP Verb</th>
+            <th>Path</th>
+            <th>Controller#action</th>
+            <th>Used for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GET</td>
+            <td>/users</td>
+            <td>Users#index</td>
+            <td>display a list of all users</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/users/new</td>
+            <td>Users#new</td>
+            <td>return an HTML form for creating a new user</td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td>/users</td>
+            <td>Users#create</td>
+            <td>create a new user</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/users/:id</td>
+            <td>Users#show</td>
+            <td>display a specific user</td>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>/users/:id/edit</td>
+            <td>Users#edit</td>
+            <td>return an HTML form for editing a user</td>
+          </tr>
+          <tr>
+            <td>PATCH/PUT</td>
+            <td>/users/:id</td>
+            <td>Users#update</td>
+            <td>update a specific user</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>/users/:id</td>
+            <td>Users#destroy</td>
+            <td>delete a specific user</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Take a look at <a href="https://github.com/pateketrueke/route-mappings">Route Mapping</a> documentation for more options and examples.</p>
+
+      <hr />
+
+      <h2><a name="Middlewares">Middlewares</a></h2>
+
+      <p>The Middleware are functions that have access to the express's request object (req), the express's response object (res), and the next middleware callback in the application’s request-response cycle.</p>
+
+      <p>A Middleware function can perform the following tasks:</p>
+
+      <ul>
+        <li>Execute any code.</li>
+        <li>Make changes to the request and the response objects.</li>
+        <li>End the request-response cycle.</li>
+        <li>Call the next middleware in the stack.</li>
+      </ul>
+
+      <p>You can add more middlewares to the <code>middlewares/</code> directory and the config/middlewares.js registry, just follow the <a href="http://expressjs.com/en/guide/writing-middleware.html">express's middlewares pattern</a>. These middlewares are <a href="http://expressjs.com/en/guide/using-middleware.html#middleware.application">express's application level middlewares</a>.</p>
+
+      <hr />
+
+      <h2><a name="Controllers">Controllers</a></h2>
+
+      <p>After routing has determined which controller to use for a request, your controller is responsible for making sense of the request and producing the appropriate output.</p>
+
+      <p>A controller can thus be thought of as a middle man between models and views. It makes the model data available to the view so it can display that data to the user, and it saves or updates data from the user to the model.</p>
+
+      <p>The controller's methods follow the same patter as Express router-level middlewares.</p>
+
+      <p>The naming convention of controllers favors pluralization of the last word in the controller's name. For example, ClientsController, SiteAdminsController, UsersController and so on.</p>
+
+      <h3><a name="BeforeActions">Before Actions</a></h3>
+
+      <p>The <code>beforeActions</code> is a static class variable set in any controller that holds a set middlewares that are run before any specific controller method(s).</p>
+
+      <script src="https://gist.github.com/sgarza/2d89627044f71fc9604aad46e2c5bebb.js"></script>
+
+      <p>Another Example</p>
+
+      <script src="https://gist.github.com/sgarza/137b28d23ea6546cf038f7a56fc97675.js"></script>
+
+      <h3><a name="Actions">Mehtods / Actions</a></h3>
+
+      <p>A controller is a class which inherits from <code>BaseController</code> or <code>RestfulController</code> and has methods just like any other class. When your application receives a request, the routing will determine which controller and action to run, then Neonode gets that controller instance and runs the method with the same name as the action.</p>
+
+      <script src="https://gist.github.com/sgarza/e345484127725b7272b704a3fd5fa03e.js"></script>
+
+      <h3><a name="Params">Parameters</a></h3>
+
+      <p>You will probably want to access data sent in by the user or other parameters in your controller actions. There are three kinds of parameters possible in a web application.</p>
+
+      <ol>
+        <li><code>req.query</code> The first are parameters that are sent as part of the URL, called query string parameters. The query string is everything after "?" in the URL.</li>
+        <li><code>req.body</code> The second type of parameter is usually referred to as POST data. This information usually comes from an HTML form which has been filled in by the user. It's called POST data because it can only be sent as part of an HTTP POST request.</li>
+        <li><code>req.params</code> The third are route parameters. Sometimes you will need to capture segments of the URI within your route.
+          <ul>
+            <li>For example, you may need to capture a user's ID from the URL. You may do so by defining route parameters: <code>RouteMappings.get('/users/:id'...)</code></li>
+            <li>Route parameters always start with <code>:</code>
+          </ul>
+        </li>
+      </ol>
+
+      <h3><a name="Sessions">Sessions</a></h3>
+
+      <p>Your application has a session for each user in which you can store small amounts of data that will be persisted between requests. The session is only available in all middlewares and the views in the <code>req.session</code></p>
+
+      <p>To enable sessions you need to:</p>
+
+      <ul>
+        <li>Install <a href="http://redis.io/">Redis</a></li>
+        <li>Ensure <code>sessions</code> key in the <code>config.js</code> is not set to false for your environment <code>sessions : { key : 'some-key', secret : 's0m3-b4c0n' }</code></li>
+        <li>You could always use your own session middleware like <code>JWT</code></li>
+      </ul>
+
+      <h3><a name="Flash">The Flash</a></h3>
+
+      <p>The flash is a special part of the session which is cleared with each request. This means that values stored there will only be available in the next request, which is useful for passing error messages etc.</p>
+
+      <script src="https://gist.github.com/sgarza/290670bf06761204d3fc5dd537df7cbd.js"></script>
+
+      <p>To access the flash object in the views:</p>
+
+      <pre><%= flash.success %></pre>
+
+      <h3><a name="Flow">Neonode's request flow</a></h3>
+      <img src="https://camo.githubusercontent.com/4785ccca93693e85a807b9ee51667a625076a9b0/68747470733a2f2f7777772e6c7563696463686172742e636f6d2f7075626c69635365676d656e74732f766965772f64386463363433662d613163652d343838392d383866662d6564663632383561336664612f696d6167652e706e67" alt="request flow" />
+
+      <hr />
+
+      <h2><a name="ModelsAndMigrations">Models and Migrations</a></h2>
+
+      <h3><a name="Migrations">Migrations</a></h3>
+
+      <p>Migrations are a convenient way to alter your database schema over time in a consistent and easy way. We choose <a href="http://knexjs.org/">Knex</a> tho handle this so that you don't have to write SQL by hand, allowing your schema and changes to be database independent.</p>
+
+      <p>The migration CLI is bundled with the knex install. To install globally, run:</p>
+
+      <pre>$ npm install -g knex</pre>
+
+      <p>Migrations use a <code>knexfile.js</code>, that is in the root directory of your application, which specify various configuration settings for the knex module.</p>
+
+      <p>Once you have edited the <code>knexfile.js</code>, you can use the migration tool to create migration files to the specified directory (default migrations). Creating new migration files can be achieved by running:</p>
+
+      <pre>$ knex migrate:make migration_name</pre>
+
+      <p>Read more on <a href="http://knexjs.org/#Schema">Knex Documentation</a></p>
+
+      <p>Once you have finished writing the migrations, you can update the database matching your NODE_ENV by running:</p>
+
+      <pre>knex migrate:latest</pre>
+
+      <p>You can also pass the --env flag or set NODE_ENV to select an alternative environment:</p>
+
+      <pre>
+$ knex migrate:latest --env production
+
+# or
+
+$ NODE_ENV=production knex migrate:latest
+      </pre>
+
+      <p>To rollback the last batch of migrations:</p>
+      <pre>$ knex migrate:rollback</pre>
+
+      <h3><a name="Models">Models</a></h3>
+
+      <p>We build <a href="https://github.com/sgarza/krypton">Krypton-ORM</a> to handle the model part of this MVC framework. The model is the layer of the system responsible for representing business data and logic. <code>Krypton-ORM</code> facilitates the creation and use of business objects whose data requires persistent storage to a database.</p>
+
+      <p>Krypton-ORM:</p>
+
+      <ul>
+        <li>Is Opinionated</li>
+        <li>Is Promised based</li>
+        <li>Is built on top of <a href="http://knexjs.org/">Knex</a></li>
+        <li>Has some ideas taken from <a href="https://github.com/Vincit/objection.js">objection.js</a> but simpler, like the relation eager loader</li>
+        <li>Implements Relations
+          <ul>
+            <li>HasOne</li>
+            <li>HasMany</li>
+            <li>HasManyThrough</li>
+          </ul>
+        </li>
+        <li>Implements <code>ActiveRecord</code> style hooks
+          <ul>
+            <li>beforeValidation</li>
+            <li>afterValidation</li>
+            <li>beforeSave</li>
+            <li>beforeCreate</li>
+            <li>beforeUpdate</li>
+            <li>afterCreate</li>
+            <li>afterUpdate</li>
+            <li>afterSave</li>
+            <li>beforeDestroy</li>
+            <li>afterDestroy</li>
+          </ul>
+        </li>
+      </ul>
+
+      <script src="https://gist.github.com/sgarza/92a17162a1c435617896689e23e13777.js"></script>
+
+      <p>See more examples in <a href="https://github.com/sgarza/krypton">Krypton-ORM repo</a>.</p>
+
+      <hr />
+
+      <h2><a name="Views">Views</a></h2>
+
+      <p>As you may know, the Controller is responsible for orchestrating the whole process of handling a request, though it normally hands off any heavy code to the Model. But then, when it's time to send a response back to the user, the Controller hands things off to the View.</p>
+
+      <h3><a name="Templates">Templates</a></h3>
+
+      <p>View files are <a href="https://github.com/freshout-dev/thulium/">Thulium</a> templates with a default .html extension and they go in the <code>/views</code> directory of your application.</p>
+
+      <p>You will use express response methods like <code>render</code> or <code>json</code> to send these views to the user.</p>
+
+      <script src="https://gist.github.com/sgarza/a0dd2a4c1352b71ef93d84f6a1d77f9f.js"></script>
+
+      <p>Or the express response <code>json</code> method to send raw data instead of a view</p>
+
+      <script src="https://gist.github.com/sgarza/124072150864474b8e714605ed427e42.js"></script>
+
+      <p>Or combine them both:</p>
+
+      <script src="https://gist.github.com/sgarza/d3d8d39081e3f177bb3ba67c8908f50c.js"></script>
+
+      <p>As you can see res.render method auto prefix <code>/views/</code> to the template path. Also <code>res.render</code> second parameter is an object that contains the variables that the view will use, this parameter is optional.</p>
+
+      <p>Another way to pass variables or helper functions to the templates is in the <code>res.locals</code> object. Each time a template is rendered the <code>res.locals</code> object is merged to the res.render second parameter object.</p>
+
+      <script src="https://gist.github.com/sgarza/1acf37b85d7107c5ad19ca7700cb5900.js"></script>
+
+      <h3><a name="Layouts">Layouts</a></h3>
+
+      <p>Layouts are a kind of template that is used to wrap other templates like the common header/footer method of wrapping views.</p>
+
+      <p>Layout templates go in <code>views/layouts/</code></p>
+
+      <p>You tell the layout where to render other views with the <code>yield</code> keyword:</p>
+
+      <script src="https://gist.github.com/sgarza/31b101604cfe7f18bc7fc82b23d59fa5.js"></script>
+
+      <p>Which layout to use in any controller method/action is specified as another template's variable.</p>
+
+      <script src="https://gist.github.com/sgarza/30532a20cedd1d2b12cf29318dbebf6c.js"></script>
+
+      <h3><a name="Partials">Partials</a></h3>
+
+      <p>Partial templates are another device for breaking the rendering process into more manageable chunks. To render a partial as part of a view, you use the renderPartial method within the view:</p>
+
+      <script src="https://gist.github.com/sgarza/793f22eeae665bf814e72b7f59628153.js"></script>
+
+      <p>The partials has access to the same variables as the template that is calling it. However you can also pass locals variables to the partial call</p>
+
+      <script src="https://gist.github.com/sgarza/1da22b29437654cf5157a9ba8f79dbf8.js"></script>
+
+      <hr />
+
+      <h2><a name="Contributing">Contributing to Neonode</a></h2>
+
+      <p>Neonode is not perfect, and it has bugs or incomplete features. You're welcome to tell us, or to contribute some code. This document describes details about how can you contribute to this project.</p>
+
+      <h3><a name="contrib-guidelines">Contribution guidelines</a></h3>
+
+      <p>Depends on the situation, you will:</p>
+
+      <ul>
+        <li>Find a bug and create an issue</li>
+        <li>Need more functionality and make a feature request</li>
+        <li>Want to contribute code and open a pull request</li>
+        <li>Run into an issue and need help</li>
+      </ul>
+
+      <h3><a name="bug-report">Bug Report</a></h3>
+
+      <p>If you find something you consider a bug, please create a issue on <a href="https://github.com/Empathia/neonode">GitHub</a>. To avoid wasting time and reduce back-and-forth communication with team members, please include at least the following information in a form comfortable for you:</p>
+
+      <ul>
+        <li>Bug Description</li>
+        <li>Neonode Version</li>
+        <li>System Type</li>
+        <li>Error Log</li>
+        <li>Other Information</li>
+      </ul>
+
+      <p>Please take a moment to check that an issue on <a href="https://github.com/Empathia/neonode">GitHub</a> doesn't already exist documenting your bug report or improvement proposal. If it does, it never hurts to add a quick "+1" or "I have this problem too". This will help prioritize the most common problems and requests.</p>
+
+      <h3><a name="feature-request">Feature Request</a></h3>
+
+      <p>There is no standard form of making a feature request. Just try to describe the feature as clearly as possible, because team members may not have experience with the functionality you're talking about.</p>
+
+      <h3><a name="pull-request">Pull Request</a></h3>
+
+      <p>Pull requests are always welcome, but note that <strong>ALL PULL REQUESTS MUST APPLY TO THE development BRANCH</strong>.</p>
+
+      <p>We are always thrilled to receive pull requests, and do our best to process them as fast as possible. Not sure if that typo is worth a pull request? Do it! We will appreciate it.</p>
+
+      <p>If your pull request is not accepted on the first try, don't be discouraged! If there's a problem with the implementation, hopefully you received feedback on what to improve.</p>
+
+      <p>We're trying very hard to keep Neonode lean and focused. We don't want it to do everything for everybody. This means that we will decide against incorporating a new feature.</p>
+
+      <h3><a name="code-of-conduct">Code of conduct</a></h3>
+
+      <p>As contributors and maintainers of this project, we pledge to respect all people who contribute through reporting issues, posting feature requests, updating documentation, submitting pull requests or patches, and other activities.</p>
+
+      <p>We are committed to making participation in this project a harassment-free experience for everyone, regardless of level of experience, gender, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, age, or religion.</p>
+
+      <p>Examples of unacceptable behavior by participants include the use of sexual language or imagery, derogatory comments or personal attacks, trolling, public or private harassment, insults, or other unprofessional conduct.</p>
+
+      <p>Project maintainers have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct. Project maintainers who do not follow the Code of Conduct may be removed from the project team.</p>
+
+      <p>This Code of Conduct is adapted from the <a href="http://contributor-covenant.org/">Contributor Covenant</a>, version 1.0.0, available at <a href="http://contributor-covenant.org/version/1/0/0/">http://contributor-covenant.org/version/1/0/0/</a></p>
+
+      <hr />
+
+      <p class="footer">Made with coffee &amp; &lt;3 at: <img class="empathia-logo" src="/images/logo-empathia.svg" alt="empathia" /></p>
+
+    </div>
+  </div>
+  </body>
+</html>
