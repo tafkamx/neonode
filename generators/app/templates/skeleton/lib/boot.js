@@ -15,7 +15,8 @@ if (CONFIG[CONFIG.environment].enableLithium) {
 }
 
 // Load RouteMapper
-CONFIG.router = require(path.join(process.cwd(), 'config', 'routeMapper.js'));
+CONFIG.router = require(path.join(process.cwd(), 'config', 'RouteMappings.js'));
+CONFIG.router.helpers = CONFIG.router.mappings;
 
 // Comment the following 2 lines to disable database access
 var knex = require('knex')(CONFIG.database[CONFIG.environment]);

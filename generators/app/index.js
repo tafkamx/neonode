@@ -87,7 +87,6 @@ module.exports = yeoman.Base.extend({
 
   install: function () {
     this.npmInstall([
-      'actions',
       'autoprefixer-loader',
       'body-parser',
       'compression-webpack-plugin',
@@ -103,7 +102,6 @@ module.exports = yeoman.Base.extend({
       'less-loader',
       'lodash',
       'lodash-inflection',
-      'methods',
       'mysql',
       'neon',
       'path',
@@ -120,10 +118,10 @@ module.exports = yeoman.Base.extend({
       'krypton-orm',
       'mkdirp',
       'morgan',
-      'object-getprototypesof',
       'path',
       'pluralize',
       'rimraf',
+      'route-mappings',
       'thulium',
       'thulium-express',
       'winston',

@@ -7,14 +7,25 @@ var router = global.neonode.express.Router();
 
 logger.info('Loading routes...');
 
-logger.info('Routes')
+logger.info('Routes');
+
+var _helpers = [];
+
 routeMapper.routes.forEach(function(route) {
-  var controller = route.controller.split('/').join('.');
-  var action     = route.action;
-  var verbs      = route.verb;
+  // save named callback
+  _helpers.push(route.as);
+
+  // append given Foo#bar
+  if (route.to) {
+    route.handler.push(route.to);
+  }
+  var _handler   = route.handler.join('.').split('#');
+  var controller = _handler[0];
+  var action     = _handler[1] || route.action;
+  var verbs      = [route.verb];
 
   verbs.forEach(function(verb) {
-    logger.info(verb + ': ' + route.path + ' ' + controller + '#' + action);
+    logger.info((verb.toUpperCase() + '      ').substr(0, 7) + ' ' + route.path + '   ' + controller + '#' + action);
 
     var controllerMethod = neonode.controllers[controller][action];
     var beforeActions    = neonode.controllers[controller].constructor.beforeActions;
@@ -59,9 +70,9 @@ logger.info('\n');
 
 logger.info('Route Helpers:');
 
-for (var helper in routeMapper.helpers) {
-  logger.info(helper)
-}
+_helpers.forEach(function(fn) {
+  logger.info('  ' + fn + '.url()');
+});
 
 logger.info('\n');
 
