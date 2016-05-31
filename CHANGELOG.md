@@ -1,3 +1,9 @@
+## 2016-05-31, Version 0.0.3
+- Removed RouteMapper
+- Added RouteMappings
+- Add locals.routeMappings helper
+- Add server listening info
+
 ## 2016-05-05, Version 0.0.2
 - Add knex to boot.js
 - Bind knex to Krypton.Model in boot.js
