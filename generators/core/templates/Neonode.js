@@ -60,6 +60,10 @@ var Neonode = Class({}, 'Neonode')({
       return this;
     },
 
+    _serverStop : function(){
+      this.server.close();
+    },
+
     _serverStart : function(){
       this.server.listen(CONFIG[CONFIG.environment].port);
     },
