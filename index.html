@@ -107,26 +107,32 @@
 
       <ul>
         <li><code>bin</code> executable files</li>
-        <li><code>config</code></li>
-        <ul>
-          <li><code>config.js</code> general app configuration</li>
-          <li><code>middlewares.js</code> This file specifies the middlewares and the order they will be loaded</li>
-          <li>RouteMappings.js Here you will set the routes.</li>
-        </ul>
+        <li>
+          <code>config</code>
+          <ul>
+            <li><code>config.js</code> general app configuration</li>
+            <li><code>middlewares.js</code> This file specifies the middlewares and the order they will be loaded</li>
+            <li>RouteMappings.js Here you will set the routes.</li>
+          </ul>
+        </li>
         <li><code>controllers</code> <a href="azendal.github.io/neon/" title="Neon.js">Neon.js</a> classes to handle the web requests</li>
-        <li><code>lib</code> You'll put custom libraries here</li>
-        <ul>
-          <li><code>boot.js</code> Here you can add code or modules that needs to run after the controllers and models are loaded</li>
-        </ul>
+        <li>
+          <code>lib</code> You'll put custom libraries here
+          <ul>
+            <li><code>boot.js</code> Here you can add code or modules that needs to run after the controllers and models are loaded</li>
+          </ul>
+        </li>
         <li><code>log</code> Application logs go here, you will find different logs depending of the value of your NODE_ENV variable, the default is <code>development.log</code></li>
         <li><code>middlewares</code> <a href="http://expressjs.com">Express</a> middlewares go here.</li>
         <li><code>migrations</code> <a href="http://knexjs.org">Knex</a> generated migrations will be here.</li>
         <li><code>models</code> This holds the <a href="https://github.com/sgarza/krypton/">Krypton-ORM</a> classes that model and wrap the data stored in the application's database</li>
         <li><code>public</code> Like the public directory for a web server, this directory has web files that don't change, such as JavaScript files (public/js), graphics (public/img), stylesheets (public/css), and HTML files (public).</li>
-        <li><code>views</code> This holds the display Thulium templates to fill in with data from our application, convert to HTML, and return to the user's browser.</li>
-        <ul>
+        <li>
+          <code>views</code> This holds the display Thulium templates to fill in with data from our application, convert to HTML, and return to the user's browser.
+          <ul>
             <li><code>layouts</code> Holds the template files for layouts to be used with views. This models the common header/footer method of wrapping views.</li>
-        </ul>
+          </ul>
+        </li>
       </ul>
 
       <hr />
