@@ -10,8 +10,9 @@
     "node": ">=0.10.33"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/server.js"
+    "start": "node bin/server.js",
+    "build": "tarima -fdV",
+    "watch": "tarima -wdVP localhost:3000"
   },
   "dependencies": {}
 }
