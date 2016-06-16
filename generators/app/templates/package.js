@@ -3,9 +3,7 @@
   "description": "<%= description %>",
   "repository": "",
   "version": "0.0.1",
-  "keywords": [
-
-  ],
+  "keywords": [],
   "engines": {
     "node": ">=0.10.33"
   },
@@ -14,5 +12,25 @@
     "build": "tarima -fdV",
     "watch": "tarima -wdVP localhost:3000"
   },
-  "dependencies": {}
+  "tarima": {
+    "rollupFile": "./rollup.config.js",
+    "bundle": true,
+    "src": "src/**/*",
+    "dest": "./public/build",
+    "ignoreFiles": [".gitignore"],
+    "filter": ["**/_entries/**"],
+    "rename": "**:{filepath/1}/{filename}.{extname}",
+    "bundleOptions": {
+      "extensions": {
+        "js": "es6",
+        "css": "post"
+      },
+      "postcss": {
+        "plugins": [
+          "postcss-import",
+          "postcss-cssnext"
+        ]
+      }
+    }
+  }
 }
