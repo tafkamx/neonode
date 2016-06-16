@@ -117,5 +117,16 @@ module.exports = yeoman.Base.extend({
       'thulium-express',
       'winston',
     ], {save : true});
+
+    this.npmInstall([
+      'buble',
+      'postcss',
+      'postcss-cssnext',
+      'postcss-import',
+      'rollup',
+      'rollup-plugin-buble',
+      'tarima-browser-sync',
+      'tarima-cli'
+    ], {'saveDev' : true});
   }
 });
