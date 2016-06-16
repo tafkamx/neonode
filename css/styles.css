@@ -1,7 +1,10 @@
+body {
+  font-family: 'Andale Mono', AndaleMono, monospace;
+}
+
 h1 {
   font-size: 24px;
   color : #7ec5ed;
-  font-family: AndaleMono
 }
 
 h1 > a {
@@ -79,7 +82,6 @@ div.menu > div.menu {
 div.menu > div.menu > .item {
   display: block;
   font-size: 12px;
-  font-family: AndaleMono;
   color : #999;
   padding: 2px 0;
   margin: 0 60px 0 0;
@@ -94,7 +96,6 @@ div.menu > div.menu > .item:hover {
 div.content {
   margin-left : 260px;
   max-width: 790px;
-  font-family : AndaleMono;
   font-size : 15px;
   line-height: 1.8;
   color : #333;
@@ -120,7 +121,6 @@ div.content h1, div.content h2, div.content h3 {
 }
 
 .description {
-  font-family: AndaleMono;
   font-size :15px;
   line-height: 1.8;
   color : #333;
