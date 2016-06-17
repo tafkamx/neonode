@@ -63,6 +63,21 @@ module.exports = yeoman.Base.extend({
       this.destinationPath()
     );
 
+    this.fs.copy(
+      this.templatePath('../../../.editorconfig'),
+      this.destinationPath('.editorconfig')
+    );
+
+    this.fs.copy(
+      this.templatePath('../../../.eslintrc'),
+      this.destinationPath('.eslintrc')
+    );
+
+    this.fs.copy(
+      this.templatePath('../../../.gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
     mkdirp.sync(path.join(this.destinationPath(), '/models'));
 
     this.log('Generating package.json...');
@@ -87,19 +102,12 @@ module.exports = yeoman.Base.extend({
 
   install: function () {
     this.npmInstall([
-      'autoprefixer-loader',
       'body-parser',
-      'compression-webpack-plugin',
       'connect-redis',
       'cookie-parser',
-      'css-loader',
       'csurf',
       'express-session',
-      'file-loader',
-      'imports-loader',
       'knex',
-      'less',
-      'less-loader',
       'lodash',
       'lodash-inflection',
       'mysql',
@@ -108,9 +116,6 @@ module.exports = yeoman.Base.extend({
       'pg',
       'redis',
       'req-flash',
-      'style-loader',
-      'url-loader',
-      'webpack',
       'method-override',
       'colors',
       'express',
@@ -126,5 +131,16 @@ module.exports = yeoman.Base.extend({
       'thulium-express',
       'winston',
     ], {save : true});
+
+    this.npmInstall([
+      'buble',
+      'postcss',
+      'postcss-cssnext',
+      'postcss-import',
+      'rollup',
+      'rollup-plugin-buble',
+      'tarima-browser-sync',
+      'tarima-cli'
+    ], {'saveDev' : true});
   }
 });
