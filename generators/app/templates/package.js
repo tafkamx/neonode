@@ -1,9 +1,9 @@
 {
+  "private": true,
   "name": "<%= name %>",
   "description": "<%= description %>",
-  "repository": "",
+  "license": "MIT",
   "version": "0.0.1",
-  "keywords": [],
   "engines": {
     "node": ">=0.10.33"
   },
