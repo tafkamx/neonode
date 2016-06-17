@@ -17,6 +17,7 @@ describe('generator-neonode:app', function () {
       '.gitignore',
       'bin',
       'bin/server.js',
+      'bin/repl.js',
       'config',
       'config/config.js',
       'config/middlewares.js',

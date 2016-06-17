@@ -8,8 +8,10 @@
     "node": ">=0.10.33"
   },
   "scripts": {
-    "start": "node bin/server.js",
     "build": "tarima -fdV",
+    "lint": "eslint *.js _src bin config models controllers middlewares",
+    "repl": "node bin/repl.js",
+    "start": "node bin/server.js",
     "watch": "tarima -wdVP localhost:3000"
   },
   "tarima": {
