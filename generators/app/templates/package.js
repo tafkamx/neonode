@@ -13,13 +13,13 @@
     "watch": "tarima -wdVP localhost:3000"
   },
   "tarima": {
-    "rollupFile": "./rollup.config.js",
     "bundle": true,
+    "rollupFile": "./rollup.config.js",
     "src": "src/**/*",
     "dest": "./public/build",
     "ignoreFiles": [".gitignore"],
     "filter": ["**/_entries/**"],
-    "rename": "**:{filepath/1}/{filename}.{extname}",
+    "rename": "**:{filepath/1/_entries}/{filename}.{extname}",
     "bundleOptions": {
       "extensions": {
         "js": "es6",
