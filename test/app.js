@@ -6,7 +6,6 @@ var helpers = require('yeoman-test');
 describe('generator-neonode:app', function () {
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
-      // .withOptions()
       .withPrompts({projectName: 'test app'})
       .on('end', done);
   });
@@ -53,20 +52,20 @@ describe('generator-neonode:app', function () {
       'models',
       'package.json',
       'public',
-      'public/css',
-      'public/css/style.css',
-      'public/css/vendor',
-      'public/css/vendor/elastic.css',
-      'public/css/vendor/elastic.print.css',
-      'public/img',
-      'public/img/favicon.gif',
-      'public/img/neon-logo.png',
-      'public/js',
-      'public/js/application.js',
-      'public/js/vendor',
-      'public/js/vendor/elastic.js',
-      'public/js/vendor/jquery-2.0.3.js',
-      'public/js/vendor/Widget.js',
+      'public/images',
+      'public/images/favicon.gif',
+      'public/images/neonode-logo.svg',
+      'rollup.config.js',
+      'src',
+      'src/javascripts',
+      'src/javascripts/_entries',
+      'src/javascripts/_entries/application.js',
+      'src/javascripts/modules',
+      'src/javascripts/modules/bar.js',
+      'src/javascripts/modules/foo.js',
+      'src/stylesheets',
+      'src/stylesheets/_entries',
+      'src/stylesheets/_entries/style.css',
       'views',
       'views/home',
       'views/home/index.html',
@@ -75,8 +74,7 @@ describe('generator-neonode:app', function () {
       'views/shared',
       'views/shared/403.html',
       'views/shared/404.html',
-      'views/shared/500.html',
-      'webpack.config.js'
+      'views/shared/500.html'
     ]);
   });
 });
