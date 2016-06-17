@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "tarima -fdV",
-    "lint": "eslint *.js _src bin config models controllers middlewares",
+    "lint": "eslint *.js src bin config models controllers middlewares",
     "repl": "node bin/repl.js",
     "start": "node bin/server.js",
     "watch": "tarima -wdVP localhost:3000"
