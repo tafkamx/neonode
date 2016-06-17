@@ -59,7 +59,6 @@ describe('generator-neonode:app', function () {
       'public/images',
       'public/images/favicon.gif',
       'public/images/neonode-logo.svg',
-      'rollup.config.js',
       'src',
       'src/javascripts',
       'src/javascripts/_entries',

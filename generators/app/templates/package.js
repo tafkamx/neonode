@@ -16,16 +16,25 @@
   },
   "tarima": {
     "bundle": true,
-    "rollupFile": "./rollup.config.js",
     "src": "src/**/*",
     "dest": "./public/build",
-    "ignoreFiles": [".gitignore"],
-    "filter": ["**/_entries/**"],
+    "ignoreFiles": [
+      ".gitignore"
+    ],
+    "filter": [
+      "**/_entries/**"
+    ],
     "rename": "**:{filepath/1/_entries}/{filename}.{extname}",
     "bundleOptions": {
       "extensions": {
         "js": "es6",
         "css": "post"
+      },
+      "rollup": {
+        "format": "iife",
+        "plugins": [
+          "rollup-plugin-buble"
+        ]
       },
       "postcss": {
         "plugins": [
