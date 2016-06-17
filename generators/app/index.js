@@ -107,7 +107,6 @@ module.exports = yeoman.Base.extend({
       'cookie-parser',
       'csurf',
       'express-session',
-      'imports-loader',
       'knex',
       'lodash',
       'lodash-inflection',
