@@ -1,5 +1,10 @@
 body {
   font-family: 'Andale Mono', AndaleMono, monospace;
+  color: #333;
+}
+
+img {
+  max-width: 100%;
 }
 
 h1 {
@@ -45,6 +50,10 @@ h2 > a {
 h3 > a {
   /*font-size: 20px;*/
   color : #7ec5ed;
+}
+
+.center {
+  text-align : center;
 }
 
 div.sidebar {
@@ -94,11 +103,10 @@ div.menu > div.menu > .item:hover {
 }
 
 div.content {
-  margin-left : 260px;
+  margin-left : 280px;
   max-width: 790px;
   font-size : 15px;
   line-height: 1.8;
-  color : #333;
 }
 
 div.content > div.container {
@@ -109,28 +117,15 @@ div.content h1, div.content h2, div.content h3 {
   line-height: 3.0;
   margin-top: 40px;
 }
-.center {
-  width : 510px;
-  margin:0 auto 80px auto;
-}
 
 .version {
   font-size :16px;
   color : #f38191;
-  text-align : center;
 }
 
 .description {
   font-size :15px;
   line-height: 1.8;
-  color : #333;
-  text-align: center;
-}
-
-.logo {
-  width : 510px;
-  height : 125px;
-  object-fit: contain;
 }
 
 .empathia-logo {
@@ -139,7 +134,6 @@ div.content h1, div.content h2, div.content h3 {
   object-fit: contain;
   vertical-align: text-bottom;
 }
-
 
 .github a {
   color : #999;
@@ -152,10 +146,6 @@ div.content h1, div.content h2, div.content h3 {
   height: 16px;
   vertical-align: text-bottom;
   margin-right: 4px;
-}
-
-p.footer {
-  text-align: center;
 }
 
 code {
