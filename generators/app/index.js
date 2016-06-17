@@ -63,6 +63,21 @@ module.exports = yeoman.Base.extend({
       this.destinationPath()
     );
 
+    this.fs.copy(
+      this.templatePath('../../../.editorconfig'),
+      this.destinationPath('.editorconfig')
+    );
+
+    this.fs.copy(
+      this.templatePath('../../../.eslintrc'),
+      this.destinationPath('.eslintrc')
+    );
+
+    this.fs.copy(
+      this.templatePath('../../../.gitignore'),
+      this.destinationPath('.gitignore')
+    );
+
     mkdirp.sync(path.join(this.destinationPath(), '/models'));
 
     this.log('Generating package.json...');

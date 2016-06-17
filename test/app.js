@@ -12,6 +12,9 @@ describe('generator-neonode:app', function () {
 
   it('Creates skeleon files', function () {
     assert.file([
+      '.editorconfig',
+      '.eslintrc',
+      '.gitignore',
       'bin',
       'bin/server.js',
       'config',
