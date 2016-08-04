@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## 2016-08-04, Version [0.0.5]
+- Added {config,knexfile}.js to .gitignore
+- Added {config,knexfile}.sample.js files
+- Added README.md
+
 ## 2016-06-17, Version [0.0.4]
 - Replaced webpack with [tarima](https://github.com/gextech/tarima-cli), default configuration:
 	- [rollup](https://github.com/rollup/rollup), module bundler
@@ -38,7 +43,8 @@
 ## 2016-01-06, Version 0.0.1
 - First Release
 
-[Unreleased]: https://github.com/Empathia/neonode/compare/0.0.4...HEAD
+[Unreleased]: https://github.com/Empathia/neonode/compare/0.0.5...HEAD
+[0.0.5]: https://github.com/Empathia/neonode/compare/0.0.4...0.0.5
 [0.0.4]: https://github.com/Empathia/neonode/compare/0.0.3...0.0.4
 [0.0.3]: https://github.com/Empathia/neonode/compare/0.0.2...0.0.3
 [0.0.2]: https://github.com/Empathia/neonode/compare/0.0.1...0.0.2
