@@ -93,7 +93,7 @@ module.exports = yeoman.Base.extend({
     this.log('Generating config/config.js...');
     this.fs.copyTpl(
       this.templatePath('config.js'),
-      this.destinationPath('config/config.js'),
+      this.destinationPath('config/config.sample.js'),
       {
         appName : this.props.name
       }
