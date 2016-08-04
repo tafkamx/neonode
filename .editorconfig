@@ -11,11 +11,5 @@ insert_final_newline = true
 [*.md]
 indent_size = 4
 
-[*.html]
-indent_size = 4
-
-[*.ejs]
-indent_size = 4
-
 [node_modules/**.js]
 codepaint = false

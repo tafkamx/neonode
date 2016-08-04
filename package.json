@@ -1,6 +1,6 @@
 {
   "name": "generator-neonode",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Yeoman generator to scaffold a Neonode Fullstack MVC Application",
   "homepage": "",
   "repository": {
