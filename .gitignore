@@ -55,3 +55,6 @@ Temporary Items
 
 #CodeClimate
 cc.sh
+
+config.js
+knexfile.js
