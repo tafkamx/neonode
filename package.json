@@ -20,6 +20,7 @@
   ],
   "main": "generators/app/index.js",
   "keywords": [
+    "yeoman-generator",
     "yeoman",
     "generator",
     "fullstack",
